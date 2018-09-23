@@ -1,9 +1,11 @@
 const https = require("https")
 
 function main(args) {
+
     var message = `Name: ${args.name}<br>
 Email: ${args.email}<br>
 Phone: ${args.phone}`
+
     var body = encodeURIComponent(message)
     var query = "?subject=[Contact]&body=" + body
 

@@ -27,6 +27,7 @@ packages:
             runtime: nodejs:6
         proxy-sendmail:
             function: proxy/sendmail.js
+            web-export: true
             inputs:
                 mailuser: $MAILGUN_RECIPIENT
                 mailkey: $MAILGUN_APIKEY
@@ -52,4 +53,4 @@ packages:
             trigger: pattern-singleton-submit
             action: pattern/bridge-formsave
 
-
+ 
