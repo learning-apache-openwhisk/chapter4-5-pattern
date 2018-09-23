@@ -1,0 +1,55 @@
+packages:
+  pattern:
+    version: 1.0
+    license: Apache-2.0
+    actions:
+        adapter-form2http:
+            function: adapter/form2http.js
+        observer-feed:
+            function: observer/feed.js
+        command-database:
+            function: command/database.zip
+            runtime: nodejs:6
+        strategy-name:
+            function: strategy/name.zip
+            runtime: nodejs:6
+        strategy-phone:
+            function: strategy/phone.zip
+            runtime: nodejs:6
+        strategy-email:
+            function: strategy/email.zip
+            runtime: nodejs:6
+        bridge-formsave:
+            function: bridge/formsave.zip
+            runtime: nodejs:6
+        composite-visitor-view:
+            function: composite-visitor/view.zip
+            runtime: nodejs:6
+        proxy-sendmail:
+            function: proxy/sendmail.js
+            inputs:
+                mailuser: $MAILGUN_RECIPIENT
+                mailkey: $MAILGUN_APIKEY
+                maildomain: $MAILGUN_SANDBOX
+        mvc-controller:
+            function: mvc/controller.js
+            web-export: true
+
+    sequences:
+        chainresp-validate:
+            actions: strategy-name, strategy-email, strategy-phone
+    
+    triggers:
+        pattern-singleton-submit:
+            feed: pattern/observer-feed
+    
+    rules:
+        pattern-submit-adapter-form2http:
+            trigger: pattern-singleton-submit
+            action: pattern/adapter-form2http
+
+        pattern-submit-brigde-formsave:
+            trigger: pattern-singleton-submit
+            action: pattern/bridge-formsave
+
+

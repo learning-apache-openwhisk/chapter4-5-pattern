@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`chainresp-validate0 1`] = `
+Object {
+  "errors": Array [
+    "missing name",
+    "missing email",
+    "missing phone",
+  ],
+  "message": Array [],
+}
+`;
+
+exports[`chainresp-validate1 1`] = `
+Object {
+  "errors": Array [
+    "missing email",
+    "missing phone",
+  ],
+  "message": Array [
+    "name: Michele",
+  ],
+  "name": "Michele",
+}
+`;
+
+exports[`chainresp-validate2 1`] = `
+Object {
+  "email": "michele@sciabarra.com",
+  "errors": Array [
+    "missing phone",
+  ],
+  "message": Array [
+    "name: Michele",
+    "email: michele@sciabarra.com",
+  ],
+  "name": "Michele",
+}
+`;
+
+exports[`chainresp-validate3 1`] = `
+Object {
+  "email": "michele@sciabarra.com",
+  "errors": Array [],
+  "message": Array [
+    "name: Michele",
+    "email: michele@sciabarra.com",
+    "phone: 1234567890",
+  ],
+  "name": "Michele",
+  "phone": "1234567890",
+}
+`;

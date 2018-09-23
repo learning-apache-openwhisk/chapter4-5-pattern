@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`composite 1`] = `"test"`;
+
+exports[`composite-visitor-view 1`] = `
+Object {
+  "body": "<!DOCTYPE html>
+  <html>
+    <head>
+     <link href=\\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css\\"
+           rel=\\"stylesheet\\" id=\\"bootstrap-css\\">
+    </head>
+    <body>
+     <div id=\\"container\\">
+       <div class=\\"row\\">
+         <div class=\\"col-md-8 col-md-offset-2\\">
+          <h4><strong>Get in Touch</strong></h4>
+  <form method=\\"POST\\">
+    <div class=\\"form-group\\">
+      <input type=\\"text\\" name=\\"name\\"
+       value=\\"Mike\\"
+       class=\\"form-control\\" placeholder=\\"Name\\">
+    </div>
+    <div class=\\"form-group\\">
+     <input type=\\"text\\" name=\\"email\\"
+      value=\\"\\"
+      class=\\"form-control\\" placeholder=\\"Email\\">
+    </div>
+    <div class=\\"form-group\\">
+      <input type=\\"tel\\" name=\\"phone\\"
+          value=\\"\\"
+          class=\\"form-control\\" placeholder=\\"Phone\\">
+    </div>
+    <button class=\\"btn btn-default\\" 
+      type=\\"submit\\" name=\\"button\\">
+       Send
+     </button>
+  </form>
+         </div>
+       </div>
+     </div>
+    </body>
+  </html>",
+}
+`;
