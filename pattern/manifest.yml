@@ -2,14 +2,15 @@ packages:
   pattern:
     version: 1.0
     license: Apache-2.0
+
     actions:
-        adapter-form2http:
-            function: adapter/form2http.js
-        observer-feed:
-            function: observer/feed.js
         command-database:
             function: command/database.zip
             runtime: nodejs:6
+        adapter-form2http:
+            function: adapter/form2http.js
+            inputs:
+                url: $PROXY_URL
         strategy-name:
             function: strategy/name.zip
             runtime: nodejs:6
@@ -25,16 +26,11 @@ packages:
         composite-visitor-view:
             function: composite-visitor/view.zip
             runtime: nodejs:6
-        proxy-sendmail:
-            function: proxy/sendmail.js
-            web-export: true
-            inputs:
-                mailuser: $MAILGUN_RECIPIENT
-                mailkey: $MAILGUN_APIKEY
-                maildomain: $MAILGUN_SANDBOX
         mvc-controller:
             function: mvc/controller.js
             web-export: true
+        observer-feed:
+            function: observer/feed.js
 
     sequences:
         chainresp-validate:
@@ -48,7 +44,6 @@ packages:
         pattern-submit-adapter-form2http:
             trigger: pattern-singleton-submit
             action: pattern/adapter-form2http
-
         pattern-submit-brigde-formsave:
             trigger: pattern-singleton-submit
             action: pattern/bridge-formsave

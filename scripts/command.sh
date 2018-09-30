@@ -1,3 +1,4 @@
+#!/bin/bash
 CMD=${1:?command}
 TYPE=${2:?type}
 KEY=${3:-}
