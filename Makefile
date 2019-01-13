@@ -15,10 +15,10 @@ deploy: bind.done \
 		composite-visitor
 	cd pattern ;\
 	env PROXY_URL=$$(wsk action get pattern-proxy-sendmail --url | tail -1) \
-	wskdeploy
+	wsk project deploy
 
 undeploy:
-	cd pattern ; wskdeploy undeploy
+	cd pattern ; wsk project undeploy
 
 clean: 
 	make undeploy
